@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Nvim installation and configuration file.
+# Установочный и конфигурационный файл Nvim. 
+
+sudo apt update          -y
+sudo apt upgrade         -y
+sudo apt install neovim  -y
+sudo apt install nodejs  -y
+sudo apt install npm     -y
+sudo npm install -g pyright
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+mkdir -p ~/.config/nvim
+nvim ~/.config/nvim/init.vim
